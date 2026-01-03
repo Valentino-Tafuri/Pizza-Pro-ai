@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { LogIn, UserPlus, Mail, Lock, Pizza } from 'lucide-react';
 
 const AuthView: React.FC = () => {

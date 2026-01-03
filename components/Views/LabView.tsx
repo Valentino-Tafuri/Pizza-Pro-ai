@@ -60,11 +60,9 @@ const LabView: React.FC<LabViewProps> = ({ subRecipes, ingredients, suppliers, o
     if (!aiRecipePrompt) return;
     setAiLoading(true);
     try {
-// Riga 1: Serve a noi per vedere nella Console se la chiave arriva o no
-console.log("DEBUG CHIAVE:", import.meta.env.VITE_GEMINI_API_KEY); 
-
-// Riga 2: È quella che fa funzionare l'AI collegandola a Vercel
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);        model: 'gemini-3-flash-preview',
+const genAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY as string });
+      const response = await genAI.models.generateContent({
+        model: 'gemini-3-flash-preview',
         contents: `Crea una ricetta professionale per semilavorato di pizzeria: "${aiRecipePrompt}". 
         Usa solo grammi per gli ingredienti. Restituisci JSON.
         Ingredienti disponibili (usa questi ID se corrispondono): ${JSON.stringify(ingredients.map(i => ({id: i.id, name: i.name})))}`,
