@@ -5,7 +5,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase
 
 // Ensure all values are correctly filled from your Firebase Console
 const firebaseConfig = {
-  apiKey: "AIzaSyARrF_NeAfAsOqyHIMTlpSkNupaDZFOsao",
+  apiKey: [.env.local]VITE_FIREBASE_API_KEY,
   authDomain: "pizza-pro-tafuri.firebaseapp.com",
   projectId: "pizza-pro-tafuri",
   storageBucket: "pizza-pro-tafuri.firebasestorage.app",
