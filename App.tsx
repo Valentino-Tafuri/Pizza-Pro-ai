@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { auth, db } from './firebase';
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { AlertCircle } from 'lucide-react';
 import Layout from './components/Layout';
 import AuthView from './components/AuthView';

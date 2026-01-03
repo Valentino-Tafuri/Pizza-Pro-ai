@@ -9,7 +9,7 @@ import {
   doc, 
   query, 
   orderBy 
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+} from "firebase/firestore";
 
 const getCollectionPath = (uid: string, sub: string) => `users/${uid}/${sub}`;
 

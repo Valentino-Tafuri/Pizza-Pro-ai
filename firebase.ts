@@ -1,16 +1,16 @@
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Ensure all values are correctly filled from your Firebase Console
 const firebaseConfig = {
-  apiKey: [.env.local]VITE_FIREBASE_API_KEY,
-  authDomain: "pizza-pro-tafuri.firebaseapp.com",
-  projectId: "pizza-pro-tafuri",
-  storageBucket: "pizza-pro-tafuri.firebasestorage.app",
-  messagingSenderId: "744087680274",
-  appId: "1:744087680274:web:2ea28748ba6ec4b12fefcb"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY as string,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string || "pizza-pro-tafuri.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID as string || "pizza-pro-tafuri",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET as string || "pizza-pro-tafuri.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string || "744087680274",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID as string || "1:744087680274:web:2ea28748ba6ec4b12fefcb"
 };
 
 const app = initializeApp(firebaseConfig);
