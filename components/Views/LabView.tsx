@@ -60,8 +60,7 @@ const LabView: React.FC<LabViewProps> = ({ subRecipes, ingredients, suppliers, o
     if (!aiRecipePrompt) return;
     setAiLoading(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-      const response = await ai.models.generateContent({
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);      const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `Crea una ricetta professionale per semilavorato di pizzeria: "${aiRecipePrompt}". 
         Usa solo grammi per gli ingredienti. Restituisci JSON.
