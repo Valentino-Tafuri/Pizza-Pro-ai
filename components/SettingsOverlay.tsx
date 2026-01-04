@@ -21,7 +21,6 @@ interface SettingsOverlayProps {
   onSignOut: () => void;
 }
 
-import Importer from './Importer';
 
 const SettingsOverlay: React.FC<SettingsOverlayProps> = ({ 
   isOpen, 
@@ -42,7 +41,6 @@ const SettingsOverlay: React.FC<SettingsOverlayProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'main' | 'user' | 'data'>('main');
   const [importLoading, setImportLoading] = useState(false);
-  const [showImporter, setShowImporter] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   if (!isOpen) return null;
@@ -117,14 +115,6 @@ const SettingsOverlay: React.FC<SettingsOverlayProps> = ({
                 <Download size={20} /><span>Scarica Backup</span>
               </button>
 
-              <div className="mt-4 border-t pt-4 space-y-3">
-                <button onClick={() => setShowImporter(true)} className="w-full bg-white text-black py-4 rounded-[2rem] font-black flex items-center justify-center border border-gray-50">
-                  <Upload size={18} /> <span className="ml-2">Importa CSV/JSON (Ingredienti / Preparazioni / Menu)</span>
-                </button>
-                <a className="block text-xs text-blue-600 mt-3" href="/templates/ingredients-template.csv" download>Scarica template CSV (Ingredienti)</a>
-              </div>
-
-              {showImporter && <Importer onAddIngredient={onAddIngredient} onAddSubRecipe={onAddSubRecipe} onAddMenuItem={onAddMenuItem} onClose={() => setShowImporter(false)} />}
             </div>
           </div>
         ) : (
