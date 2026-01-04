@@ -1,0 +1,6 @@
+name,unit,pricePerUnit,category,supplierId
+Farina,kg,1.20,Base,
+Acqua,l,0,Base,
+Lievito,kg,10,Base,
+Sale,kg,0.50,Base,
+Olio,kg,3.0,Condimenti,
